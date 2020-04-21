@@ -1,4 +1,5 @@
 from django.db import models
+from DjangoUeditor.models import UEditorField
 
 # Create your models here.
 class ArticleModel(models.Model):
@@ -9,7 +10,7 @@ class ArticleModel(models.Model):
     url = models.CharField(max_length=500, verbose_name='原始链接', null=True, blank=True)
     title = models.CharField(max_length=200, verbose_name='标题')
     abstract = models.CharField(max_length=300, verbose_name='摘要', null=True, blank=True)
-    text = models.TextField(verbose_name='内容')
+    text = UEditorField(verbose_name='内容', width=600, height=700, toolbars="full", imagePath="ueditor/", filePath="ueditor/", blank=True, null=True)
     publish_time = models.CharField(max_length=150, verbose_name='发布时间')
     access_time = models.CharField(max_length=150, verbose_name='获取时间')
     location = models.CharField(max_length=50, verbose_name='国家地区', null=True, blank=True)
