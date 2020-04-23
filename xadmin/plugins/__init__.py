@@ -29,7 +29,8 @@ PLUGINS = (
     'quickfilter',
     'sortablelist',
     'importexport',
-    'ueditor'
+    'ueditor',
+    'import_csv'
 )
 
 
