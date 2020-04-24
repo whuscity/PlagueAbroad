@@ -3,6 +3,8 @@ import pymysql
 import xadmin
 from .models import ArticleSource, ArticleData
 from  xadmin import  views
+from  datetime import  datetime
+import  numpy as np
 
 from PlagueAbroad.settings import DATABASES
 
@@ -65,15 +67,31 @@ class ArticleDataAdmin(object):
             for index, item in data_df.iterrows():
                 case = ArticleData()
                 case.id = item.get('id')
-                case.direct_source = item.get('direct_source')
-                case.original_source = item.get('original_source')
+                case.direct_source_id = item.get('direct_source_id')
+                # case.original_source_id = item.get('original_source_id')
+                print(item.get('original_source_id'))
+                print(type(item.get('original_source_id')))
+                # if item.get('original_source_id') is np.nan:
+                #     case.original_source_id = None
+                # else:
+                #     case.original_source_id = item.get('original_source_id')
+                case.original_source_name = item.get('original_source_name')
                 case.nick_name = item.get('nick_name')
+                if item.get('nick_name') is np.nan:
+                    print(True)
+                    case.nick_name = None
                 case.url = item.get('url')
                 case.title = item.get('title')
                 case.abstract = item.get('abstract')
                 case.text = item.get('text')
-                case.publish_time = item.get('publish_time')
-                case.access_time = item.get('access_time')
+                publish_time = datetime.strptime(item.get('publish_time'), "%d/%m/%Y %H:%M:%S")
+                print(publish_time)
+                case.publish_time = datetime.strftime(publish_time, "%Y-%m-%d %H:%M:%S")
+                # print(case.publish_time)
+                access_time = datetime.strptime(item.get('access_time'), "%d/%m/%Y %H:%M:%S")
+                print(access_time)
+                case.access_time = datetime.strftime(access_time, "%Y-%m-%d %H:%M:%S")
+                # case.access_time = item.get('access_time')
                 case.location = item.get('location')
                 type2char = {'官方通告': 'O', '抗疫指南':'D', '风险预警':'A'}
                 case.type = type2char.get(item.get('type'))
