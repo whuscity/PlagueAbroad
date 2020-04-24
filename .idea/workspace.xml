@@ -20,11 +20,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connections.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/develop/Anaconda3/envs/web_develop/Lib/site-packages/MySQLdb/connections.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="134" column="25" lean-forward="false" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -84,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/article/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="429">
               <caret line="69" column="42" lean-forward="true" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -334,14 +344,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xadmin/templates/xadmin/csv/tooolbar_importcsv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/article/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -749,22 +751,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="69" column="42" lean-forward="true" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-            <marker date="1587695620775" expanded="true" signature="0:7" ph="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/develop/Anaconda3/envs/web_develop/Lib/site-packages/MySQLdb/connections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="134" column="25" lean-forward="false" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="69" column="42" lean-forward="true" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <marker date="1587695620775" expanded="true" signature="0:7" ph="import ..." />
+          </folding>
         </state>
       </provider>
     </entry>
