@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'OEC',
     'crispy_forms',
     'import_export',
     'xadmin',
