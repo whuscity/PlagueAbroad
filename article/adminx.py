@@ -27,6 +27,7 @@ class ArticleSourceAdmin(object):
     list_filter = ['name']
     import_csv = True
 
+
     def post(self, request, *args, **kwargs):
         if 'excel' in request.FILES:
             file = request.FILES.get('excel')
@@ -40,6 +41,8 @@ class ArticleSourceAdmin(object):
                 case.name = item.get('name')
                 case.link = item.get('link')
                 case.description = item.get('description')
+                if str(item.get('description')) == 'nan':
+                    case.description = None
                 if case.id not in idxs_d:
                     sources.append(case)
             if sources:
@@ -69,16 +72,13 @@ class ArticleDataAdmin(object):
                 case.id = item.get('id')
                 case.direct_source_id = item.get('direct_source_id')
                 # case.original_source_id = item.get('original_source_id')
-                print(item.get('original_source_id'))
-                print(type(item.get('original_source_id')))
-                # if item.get('original_source_id') is np.nan:
-                #     case.original_source_id = None
-                # else:
-                #     case.original_source_id = item.get('original_source_id')
+                if str(item.get('original_source_id')) == 'nan':
+                    case.original_source_id = None
+                else:
+                    case.original_source_id = int(item.get('original_source_id'))
                 case.original_source_name = item.get('original_source_name')
                 case.nick_name = item.get('nick_name')
-                if item.get('nick_name') is np.nan:
-                    print(True)
+                if str(item.get('nick_name')) == 'nan':
                     case.nick_name = None
                 case.url = item.get('url')
                 case.title = item.get('title')
