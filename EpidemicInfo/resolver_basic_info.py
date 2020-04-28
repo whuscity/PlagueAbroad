@@ -13,9 +13,10 @@ def get_country_basic_info(data, cursor):
             continue
         region_chinese = country_chinese
         region = country_data["ENGLISH"]
+        region_parent_id = 0
         region_level = 1
-        sql = '''insert into region_basic_info(id, region, region_chinese, region_level) 
-                values("%d", "%s", "%s", "%d")''' % (region_id, region, region_chinese, region_level)
+        sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level) 
+                values("%d", "%s", "%s", "%d", "%d")''' % (region_id, region, region_chinese, region_parent_id, region_level)
         cursor.execute(sql)
         region_id += 1
         # if len(country_data) > 4:

@@ -165,8 +165,9 @@ def update_region_data(data, cursor, need_update_day_list):
                 else:
                     # 没有上一级，则其本身就是国家级
                     region_level = 1
-                    sql = '''insert into region_basic_info(id, region, region_chinese, region_level)
-                        values("%d", "%s", "%s", "%d")''' % (current_region_id, region_name, region_chinese, region_level)
+                    region_parent_id = 0
+                    sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
+                        values("%d", "%s", "%s", "%d", "%d")''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level)
                     # print(sql)
                     cursor.execute(sql)
 
