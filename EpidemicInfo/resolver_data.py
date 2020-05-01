@@ -24,8 +24,12 @@ def get_global(data, cursor):
         # print(str(confirmed) + "," + str(deaths) + "," + str(recovered))
 
         updated_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # sql = '''insert into global(confirmed, deaths, recovered, day_date, update_time)
+        #         values("%d", "%d", "%d", "%s", "%s")''' % (confirmed, deaths, recovered, day_date, updated_time)
         sql = '''insert into global(confirmed, deaths, recovered, day_date, update_time)
-                values("%d", "%d", "%d", "%s", "%s")''' % (confirmed, deaths, recovered, day_date, updated_time)
+                select "%d", "%d", "%d", "%s", "%s"
+                where not exists(select 1 from global b where b.day_date = "%s")
+            ''' % (confirmed, deaths, recovered, day_date, updated_time, day_date)
         cursor.execute(sql)
     db.commit()
 
@@ -74,8 +78,9 @@ def get_region_data2df(data, cursor, count, timelines):
 
             last_updated = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             id_list.append(count)
+            region_parent_id = 0
             # 拼接region，用于唯一区分一条数据，便于找到父级id
-            region = country_chinese + "_" + country_data['ENGLISH']
+            region = country_chinese + "_" + country_data['ENGLISH'] + "_" + str(region_parent_id)
             region_list.append(region)
             confirmed_list.append(confirmed)
             deaths_list.append(deaths)
@@ -274,7 +279,9 @@ def build_region_dict(cursor):
             key = r_data[2] + '_' + r_data[1]
         region_dict[key] = value
     region_json = json.dumps(region_dict, ensure_ascii = False, indent=4)
-    f = open("region_name2id.json", 'w', encoding = 'utf-8')
+    # linux
+    f = open("/project/PlagueAbroad/EpidemicInfo/region_name2id.json", 'w', encoding='utf-8')
+    # f = open("region_name2id.json", 'w', encoding = 'utf-8')
     f.write(region_json)
     # json.dump(region_json, f, ensure_ascii = False, indent=4)
     f.close()
@@ -317,13 +324,13 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     # 调用获取全球数据
-    # get_global(data, cursor)
+    get_global(data, cursor)
 
     # 将地区疫情数据转入csv文件
-    # get_region_data2csv(data, cursor)
+    get_region_data2csv(data, cursor)
 
     # 构建region和id的字典
-    # build_region_dict(cursor)
+    build_region_dict(cursor)
 
     # 获取地区疫情数据，存入数据库
     get_region_data()

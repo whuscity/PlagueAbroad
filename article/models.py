@@ -15,13 +15,15 @@ class ArticleSource(models.Model):
         verbose_name_plural = verbose_name
 
 class ArticleData(models.Model):
+    title = models.CharField(max_length=200, verbose_name='标题', null=True, blank=True)
+    is_public = models.IntegerField(verbose_name="是否对外发布", choices=((0, '否'), (1, '是')), null=True, blank=True)
+    is_put_top = models.IntegerField(verbose_name="是否置顶", choices=((0, '否'), (1, '是')), null=True, blank=True)
     direct_source = models.ForeignKey(ArticleSource, related_name="direct_source", verbose_name='直接来源', on_delete=models.CASCADE, null=True, blank=True)
     original_source = models.ForeignKey(ArticleSource, related_name="original_source", verbose_name='原始来源', on_delete=models.CASCADE, null=True, blank=True)
     original_source_name = models.CharField(max_length=200, verbose_name='原始机构', null=True, blank=True)
     nick_name = models.CharField(max_length=100, verbose_name='微博昵称', null=True, blank=True)
     url = models.CharField(max_length=500, verbose_name='原始链接', null=True, blank=True)
-    title = models.CharField(max_length=200, verbose_name='标题', null=True, blank=True)
-    abstract = models.CharField(max_length=300, verbose_name='摘要', null=True, blank=True)
+    abstract = models.TextField(max_length=300, verbose_name='摘要', null=True, blank=True)
     text = UEditorField(verbose_name='内容', width=600, height=700, toolbars="full", imagePath="ueditor/", filePath="ueditor/", blank=True, null=True)
     publish_time = models.DateTimeField(max_length=150, verbose_name='发布时间', null=True, blank=True)
     access_time = models.DateTimeField(max_length=150, verbose_name='获取时间', null=True, blank=True)

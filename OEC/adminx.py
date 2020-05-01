@@ -6,7 +6,7 @@ import pandas as pd
 from .models import OECInfo
 
 class OECInfoAdmin(object):
-    list_display = ['region', 'name', 'related_info', 'address', 'phone', 'url', 'email', 'type']
+    list_display = ['region', 'name', 'address', 'phone', 'url', 'email', 'type']
     list_filter = ['region', 'name','address', 'phone', 'url', 'email', 'type']
 
     import_csv = True

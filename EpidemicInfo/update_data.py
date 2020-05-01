@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import requests
 
-from . import resolver_data
+import resolver_data
 
 # 根据全球的时间序列获取数据库中需要更新的疫情日期
 def get_need_update_day(data, cursor):
@@ -43,10 +43,11 @@ def get_need_update_day(data, cursor):
 
     # 获取未更新数据的日期（如果可以包括前一天的日期，则防止数据未更新完毕或者出错的情况）
     need_update_day_list = []
-    if delta >= 1:
-        # for day in range(0, delta + 1):
-        # 暂时不包括前一天的日期
-        for day in range(1, delta + 1):
+    if delta >= 0:
+        # 包括前一天的日期
+        for day in range(0, delta + 1):
+        # 不包括前一天的日期
+        # for day in range(1, delta + 1):
             add_delta = datetime.timedelta(days = day)
             need_update_day = last_day_date + add_delta
             need_update_day_str = datetime.datetime.strftime(need_update_day, "%Y-%m-%d")
@@ -78,8 +79,8 @@ def update_global_data(data, cursor, need_update_day_list):
             sql = '''insert into global(confirmed, deaths, recovered, day_date, update_time) 
                     values('%d', '%d', '%d', '%s', '%s')''' % (confirmed, deaths, recovered, day_date, update_time)
         else:
-            sql = '''update global set confirmed = "%d", deaths = "%d", recovered = "%d"
-                     where day_date = "%s"''' % (confirmed, deaths, recovered, day_date)
+            sql = '''update global set confirmed = "%d", deaths = "%d", recovered = "%d", update_time = "%s"
+                     where day_date = "%s"''' % (confirmed, deaths, recovered, update_time, day_date)
         cursor.execute(sql)
 
     db.commit()
@@ -91,6 +92,10 @@ def update_region_data(data, cursor, need_update_day_list):
     cursor：数据库cursor
     need_update_day_list：需要更新的日期列表  格式是["2020-04-22", "2020-04-23",...]
     '''
+
+    # 更新之前重新生成字典，防止出错
+    resolver_data.build_region_dict(cursor)
+
     # 获取region_data表中当前最后一条数据的id
     select_sql = "select count(*) from region_data"
     cursor.execute(select_sql)
@@ -108,7 +113,9 @@ def update_region_data(data, cursor, need_update_day_list):
     df_region_list = list(region_data_df['region'])
 
     # 获取region行和id对应的字典 {"阿富汗_Afghanistan": 1,"阿尔巴尼亚_Albania": 2,...}
-    f = open(r'D:\workspace\vscode_workspace\COVID19_Test\20200422\region_name2id.json', 'r', encoding="utf-8")
+    # linux
+    f = open('/project/PlagueAbroad/EpidemicInfo/region_name2id.json', 'r', encoding="utf-8")
+    # f = open(r'region_name2id.json', 'r', encoding="utf-8")
     region_dict = json.load(f)
     # print(region_dict.items())
     region_id_list = []
@@ -151,11 +158,19 @@ def update_region_data(data, cursor, need_update_day_list):
                     # 当前地区的region_level即为父级加1
                     region_level = parent_region_level + 1
 
-                    # 将新的地区数据插入到region_basic_info表
-                    sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
-                        values("%d", "%s", "%s", "%d", "%d")''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level)
+                    if region not in region_dict:
+                        # 将新的地区数据插入到region_basic_info表
+                        sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
+                            values("%d", "%s", "%s", "%d", "%d")''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level)
+                        cursor.execute(sql)
+                    # 若存在则不插入
+                    # sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
+                    #     select "%d", "%s", "%s", "%d", "%d"
+                    #     where not exists(select 1 from region_basic_info b
+                    #     where b.region = "%s" and b.region_chinese = "%s" and b.region_parent_id = "%d")
+                    #     ''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level, region_name, region_chinese, region_parent_id)
                     # print(sql)
-                    cursor.execute(sql)
+                    # cursor.execute(sql)
 
                     # 保存当前插入的地区的id
                     save_current_region_id = current_region_id
@@ -166,10 +181,19 @@ def update_region_data(data, cursor, need_update_day_list):
                     # 没有上一级，则其本身就是国家级
                     region_level = 1
                     region_parent_id = 0
-                    sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
-                        values("%d", "%s", "%s", "%d", "%d")''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level)
+
+                    if region not in region_dict:
+                        sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
+                            values("%d", "%s", "%s", "%d", "%d")''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level)
+                        cursor.execute(sql)
+                    # # 若存在则不插入
+                    # sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level)
+                    #     select "%d", "%s", "%s", "%d", "%d"
+                    #     where not exists(select 1 from region_basic_info b
+                    #     where b.region = "%s" and b.region_chinese = "%s" and b.region_parent_id = "%d")
+                    #     ''' % (current_region_id, region_name, region_chinese, region_parent_id, region_level, region_name, region_chinese, region_parent_id)
                     # print(sql)
-                    cursor.execute(sql)
+                    # cursor.execute(sql)
 
                     # 保存当前插入的地区的id
                     save_current_region_id = current_region_id
@@ -188,10 +212,72 @@ def update_region_data(data, cursor, need_update_day_list):
     region_data_df['region_id'] = region_id_list
     # print(region_data_df)
     region_data_df = region_data_df.drop('region', axis=1)
-    # 将新增的region_data写入数据库
-    engine = create_engine('mysql+pymysql://root:123456@localhost:3306/covid_2019?charset=utf8')
-    con = engine.connect()
-    region_data_df.to_sql("region_data", con, if_exists = 'append', index = False)
+    
+    # 法一：直接写入，将新增的region_data写入数据库
+    # engine = create_engine('mysql+pymysql://root:123456@localhost:3306/covid_2019?charset=utf8')
+    # con = engine.connect()
+    # region_data_df.to_sql("region_data", con, if_exists = 'append', index = False)
+    
+    # 20200430更新，对新增的数据去重
+    print(region_data_df)
+    print(len(region_data_df))
+    # 给region_data建一个字典 主要字段为region_id, day_date
+    select_data_sql = "select id, region_id, day_date from region_data"
+    cursor.execute(select_data_sql)
+    all_data = cursor.fetchall()
+    # print(all_data[:10])
+    # 使用list速度也相对较慢，但比数据库判断是否重复要快
+    # l = []
+    region_data_dict = {}
+    for d in all_data:
+        data_id = d[0]
+        region_id = d[1]
+        day_date = d[2]
+        # l.append(str(region_id) + "_" + day_date)
+        # 随便赋一个值
+        region_data_dict[str(region_id) + "_" + day_date] = data_id
+    
+    for index, row in region_data_df.iterrows():
+        data_id = row['id']
+        region_id = row['region_id']
+        confirmed = row['confirmed']
+        deaths = row['deaths']
+        recovered = row['recovered']
+        day_date = row['day_date']
+        last_updated = row['last_updated']
+
+        rd_key = str(region_id) + "_" + day_date
+
+        if rd_key not in region_data_dict:
+            sql_insert_update = '''insert into region_data(id, region_id, confirmed, deaths, recovered, day_date, last_updated)
+                                values("%d", "%d", "%d", "%d", "%d", "%s", "%s")
+                            ''' % (data_id, region_id, confirmed, deaths, recovered, day_date, last_updated)
+            cursor.execute(sql_insert_update)
+        else:
+            d_id = region_data_dict[rd_key]
+            # print(d_id)
+        #     # sql_insert_update = ''' update region_data set confirmed = "%d", deaths = "%d", recovered = "%d"
+        #     #                     where region_id = "%d" and day_date = "%s"
+        #     #                 ''' % (confirmed, deaths, recovered, region_id, day_date)
+            # 建一个id索引，增加查询速度
+            sql_insert_update = ''' update region_data set confirmed = "%d", deaths = "%d", recovered = "%d", last_updated = "%s"
+                                where id = "%d"
+                            ''' % (confirmed, deaths, recovered, last_updated, d_id)
+        # print(sql_insert_update)
+            cursor.execute(sql_insert_update)
+    db.commit()
+
+    #     print(data_id, region_id, confirmed, deaths, recovered, day_date, last_updated)
+
+    #     # 速度太慢了
+    #     sql_insert_data = '''insert into region_data(id, region_id, confirmed, deaths, recovered, day_date, last_updated)
+    #             select "%d", "%d", "%d", "%d", "%d", "%s", "%s"
+    #             where not exists(select 1 from region_data b
+    #             where b.day_date = "%s" and b.region_id = "%d")
+    #         ''' % (data_id, region_id, confirmed, deaths, recovered, day_date, last_updated, day_date, region_id)
+    #     # # if index % 100 == 0 or index == len(region_data_df) - 1:
+    #     cursor.execute(sql_insert_data)
+    # db.commit()
     
     # 更新完成之后需要重新生成字典
     resolver_data.build_region_dict(cursor)
@@ -204,11 +290,16 @@ if __name__ == "__main__":
 
     req = requests.get("https://raw.githubusercontent.com/stevenliuyi/covid19/master/public/data/all.json" ,headers = headers)
     req.encoding = 'utf-8'
-    fw = open(r"D:\Github\PlagueAbroad\EpidemicInfo\all.json", 'w', encoding='utf-8')
+
+    #linux
+    fw = open("/project/PlagueAbroad/EpidemicInfo/all.json", 'w', encoding='utf-8')
+    # fw = open(r"all.json", 'w', encoding='utf-8')
     json.dump(req.json(), fw, ensure_ascii=False, indent=4)
     fw.close()
-    
-    fr = open(r"D:\Github\PlagueAbroad\EpidemicInfo\all.json", "r", encoding="utf8")
+
+    #linux
+    fr = open("/project/PlagueAbroad/EpidemicInfo/all.json", "r", encoding="utf8")
+    # fr = open(r"all.json", "r", encoding="utf8")
     data = json.load(fr)
 
     db = pymysql.connect(

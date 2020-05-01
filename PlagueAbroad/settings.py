@@ -25,7 +25,7 @@ SECRET_KEY = 'o@)g7+%5amd%3=8i#=xnlc%ldm6_ksvw($jmb=r_68^68j%t3o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'OEC',
+    'plague',
     'crispy_forms',
     'import_export',
     'xadmin',
@@ -86,7 +87,7 @@ DATABASES = {
         'NAME': 'covid_2019',
         'USER': 'root',
         'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
@@ -130,3 +131,6 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+# 跨域
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True

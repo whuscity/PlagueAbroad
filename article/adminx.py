@@ -19,7 +19,7 @@ class BaseXadminSettings(object):
 
 class CommonXadminSettings(object):
     site_title = '海外疫情信息集成平台后台管理'
-    site_footer = 'whuscity'
+    site_footer = '鄂ICP备15018236号-5'
     menu_style = 'accordion'
 
 class ArticleSourceAdmin(object):
@@ -55,8 +55,8 @@ class ArticleSourceAdmin(object):
 
 
 class ArticleDataAdmin(object):
-    list_display = ['title', 'original_source_name', 'publish_time']
-    list_filter = ['original_source_name', 'title', 'location', 'type']
+    list_display = ['title', 'original_source_name', 'publish_time', 'is_public', 'is_put_top']
+    list_filter = ['original_source_name', 'title', 'location', 'type', 'is_public', 'is_put_top']
     style_fields = {"text": "ueditor"}
     import_csv = True
 
