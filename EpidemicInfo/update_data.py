@@ -149,14 +149,20 @@ def update_region_data(data, cursor, need_update_day_list):
                 # 判断是否存在父级
                 if len(new_region_info) > 2:
                     # 是否要判断新增的是国家级还是省级（感觉疫情发展到今天，应该是包括所有国家了），暂时先不判断
+                    # 2020.05.01 确实出现了新的国家，绝望...
 
                     # 获取父级的region_level值
                     region_parent_id = int(new_region_info[2])
-                    parent_sql = "select region_level from region_basic_info where id = '%d'" % region_parent_id
-                    cursor.execute(parent_sql)
-                    parent_region_level = cursor.fetchone()[0]
-                    # 当前地区的region_level即为父级加1
-                    region_level = parent_region_level + 1
+
+                    # 判断是否为国家
+                    if region_parent_id == 0:
+                        region_level = 1
+                    else:
+                        parent_sql = "select region_level from region_basic_info where id = '%d'" % region_parent_id
+                        cursor.execute(parent_sql)
+                        parent_region_level = cursor.fetchone()[0]
+                        # 当前地区的region_level即为父级加1
+                        region_level = parent_region_level + 1
 
                     if region not in region_dict:
                         # 将新的地区数据插入到region_basic_info表
@@ -236,9 +242,11 @@ def update_region_data(data, cursor, need_update_day_list):
         # l.append(str(region_id) + "_" + day_date)
         # 随便赋一个值
         region_data_dict[str(region_id) + "_" + day_date] = data_id
-    
+
+    # 更新数,更新的数据占用了id，因此需要减掉
+    count = 0
     for index, row in region_data_df.iterrows():
-        data_id = row['id']
+        data_id = row['id'] - count
         region_id = row['region_id']
         confirmed = row['confirmed']
         deaths = row['deaths']
@@ -265,6 +273,7 @@ def update_region_data(data, cursor, need_update_day_list):
                             ''' % (confirmed, deaths, recovered, last_updated, d_id)
         # print(sql_insert_update)
             cursor.execute(sql_insert_update)
+            count += 1
     db.commit()
 
     #     print(data_id, region_id, confirmed, deaths, recovered, day_date, last_updated)
