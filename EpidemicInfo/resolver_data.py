@@ -101,6 +101,46 @@ def get_region_data2df(data, cursor, count, timelines):
                     for cn_chinese, cn_data in province_data.items():
                         if cn_chinese in ["ENGLISH", "confirmedCount", "deadCount", "curedCount"]:
                             continue
+
+                        # 先插入省级数据
+                        # 获取国级（父级）的id
+                        get_pro_region_parent_id_sql = '''select id from region_basic_info where region_chinese = "%s"''' % "中国"
+                        cursor.execute(get_pro_region_parent_id_sql)
+                        pro_region_parent_id = cursor.fetchone()[0]
+                        pro_region_e = cn_data["ENGLISH"]
+                        confirmed_dict = cn_data["confirmedCount"]
+                        deaths_dict = cn_data["deadCount"]
+                        recovered_dict = cn_data["curedCount"]
+                        for day_date in timelines:
+                            confirmed = -1
+                            deaths = -1
+                            recovered = -1
+                            if len(confirmed_dict) > 0:
+                                confirmed = 0
+                            if len(deaths_dict) > 0:
+                                deaths = 0
+                            if len(recovered_dict) > 0:
+                                recovered = 0
+                            if day_date in confirmed_dict:
+                                confirmed = confirmed_dict[day_date]
+                            if day_date in deaths_dict:
+                                deaths = deaths_dict[day_date]
+                            if day_date in recovered_dict:
+                                recovered = recovered_dict[day_date]
+                            print(count)
+                            last_updated = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            id_list.append(count)
+                            # region_list.append(country_chinese)
+                            region = cn_chinese + "_" + pro_region_e + "_" + str(pro_region_parent_id)
+                            region_list.append(region)
+                            confirmed_list.append(confirmed)
+                            deaths_list.append(deaths)
+                            recovered_list.append(recovered)
+                            day_date_list.append(day_date)
+                            last_updated_list.append(last_updated)
+                            print(str(confirmed) + "," + str(deaths) + "," + str(recovered))
+                            count += 1
+
                         # 省中的键的个数大于4，则表示存在市级
                         if len(cn_data) > 4:
                             # 获取省级（父级）的id
