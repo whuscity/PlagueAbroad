@@ -10,8 +10,9 @@ class GlobalAdmin(object):
     list_filter = ['confirmed', 'deaths', 'recovered', 'day_date', 'update_time']
 
 class RegionBasicInfoAdmin(object):
-    list_display = ['region', 'region_chinese', 'region_parent_id', 'region_level']
+    list_display = ['id', 'region', 'region_chinese', 'region_parent_id', 'region_level']
     list_filter = ['region', 'region_chinese', 'region_parent_id', 'region_level']
+    readonly_fields = ['id']
 
 class RegionDataAdmin(object):
     list_display = ['region_id', 'confirmed', 'deaths', 'recovered', 'day_date', 'last_updated']

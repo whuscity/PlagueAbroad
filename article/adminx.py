@@ -55,8 +55,8 @@ class ArticleSourceAdmin(object):
 
 
 class ArticleDataAdmin(object):
-    list_display = ['title', 'original_source_name', 'publish_time', 'is_public', 'is_put_top']
-    list_filter = ['original_source_name', 'title', 'location', 'type', 'is_public', 'is_put_top']
+    list_display = ['title', 'original_source_name', 'publish_time', 'access_time', 'is_public', 'is_put_top']
+    list_filter = ['original_source_name', 'title', 'location', 'type', 'access_time' ,'is_public', 'is_put_top']
     style_fields = {"text": "ueditor"}
     import_csv = True
 
@@ -66,7 +66,11 @@ class ArticleDataAdmin(object):
             data_df = pd.read_csv(file, encoding='utf-8')
             sources = []
             idxs = ArticleData.objects.all().values('id')
+            urls = ArticleData.objects.all().values('url')
+            print(idxs)
+            print(urls)
             idxs_d = dict([(d['id'], True) for d in idxs])
+            urls_list = dict([(d['url'], True) for d in urls])
             for index, item in data_df.iterrows():
                 case = ArticleData()
                 case.id = item.get('id')
@@ -95,7 +99,15 @@ class ArticleDataAdmin(object):
                 case.location = item.get('location')
                 type2char = {'官方通告': 'O', '抗疫指南':'D', '风险预警':'A'}
                 case.type = type2char.get(item.get('type'))
-                if case.id not in idxs_d:
+
+                # public_dict = {'否': 0, '是': 1, '待审核': 2}
+                # case.is_public = public_dict.get(item.get('is_public'))
+                case.is_public = 2
+                # top_dict = {'否': 0, '是': 1}
+                # case.is_put_top = top_dict.get(item.get('is_put_top'))
+                case.is_put_top = 0
+
+                if case.id not in idxs_d and case.url not in urls_list:
                     sources.append(case)
             if sources:
                 ArticleData.objects.bulk_create(sources)

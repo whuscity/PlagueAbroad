@@ -16,7 +16,7 @@ class ArticleSource(models.Model):
 
 class ArticleData(models.Model):
     title = models.CharField(max_length=200, verbose_name='标题', null=True, blank=True)
-    is_public = models.IntegerField(verbose_name="是否对外发布", choices=((0, '否'), (1, '是')), null=True, blank=True)
+    is_public = models.IntegerField(verbose_name="是否对外发布", choices=((0, '否'), (1, '是'),(2, '待审核')), null=True, blank=True)
     is_put_top = models.IntegerField(verbose_name="是否置顶", choices=((0, '否'), (1, '是')), null=True, blank=True)
     direct_source = models.ForeignKey(ArticleSource, related_name="direct_source", verbose_name='直接来源', on_delete=models.CASCADE, null=True, blank=True)
     original_source = models.ForeignKey(ArticleSource, related_name="original_source", verbose_name='原始来源', on_delete=models.CASCADE, null=True, blank=True)
