@@ -7,6 +7,7 @@ from  datetime import  datetime
 import  numpy as np
 
 from PlagueAbroad.settings import DATABASES
+from xadmin.views.edit import UpdateAdminView
 
 
 import  pandas as pd
@@ -58,6 +59,7 @@ class ArticleDataAdmin(object):
     list_display = ['title', 'original_source_name', 'publish_time', 'access_time', 'is_public', 'is_put_top']
     list_filter = ['original_source_name', 'title', 'location', 'type', 'access_time' ,'is_public', 'is_put_top']
     style_fields = {"text": "ueditor"}
+    list_editable = ['is_public', 'is_put_top']
     import_csv = True
 
     def post(self, request, *args, **kwargs):
@@ -111,7 +113,8 @@ class ArticleDataAdmin(object):
                     sources.append(case)
             if sources:
                 ArticleData.objects.bulk_create(sources)
-        return super(ArticleDataAdmin, self).post(request, args, kwargs)
+        return super(ArticleDataAdmin, self).post(request, *args, **kwargs)
+        # return super(UpdateAdminView, self).post(request, *args, **kwargs)
 
 xadmin.site.register(ArticleSource, ArticleSourceAdmin)
 xadmin.site.register(ArticleData, ArticleDataAdmin)
