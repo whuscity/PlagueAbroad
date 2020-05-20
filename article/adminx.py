@@ -56,10 +56,10 @@ class ArticleSourceAdmin(object):
 
 
 class ArticleDataAdmin(object):
-    list_display = ['title', 'original_source_name', 'publish_time', 'access_time', 'is_public', 'is_put_top']
-    list_filter = ['original_source_name', 'title', 'location', 'type', 'access_time' ,'is_public', 'is_put_top']
+    list_display = ['title', 'original_source_name',  'type', 'is_public', 'is_put_top', 'publish_time']
+    list_filter = ['original_source_name', 'title', 'location', 'access_time' ,'is_public', 'is_put_top', 'type']
     style_fields = {"text": "ueditor"}
-    list_editable = ['is_public', 'is_put_top']
+    list_editable = ['is_public', 'is_put_top', 'type']
     import_csv = True
 
     def post(self, request, *args, **kwargs):
