@@ -291,6 +291,29 @@ def update_region_data(data, cursor, need_update_day_list):
     # 更新完成之后需要重新生成字典
     resolver_data.build_region_dict(cursor)
 
+# 通过最新的两条数据判断是否存在问题
+def is_problem_data(data):
+    global_data = data["全球"]
+    confirmed_dict = global_data["confirmedCount"]
+    deaths_dict = global_data["deadCount"]
+    recovered_dict = global_data["curedCount"]
+
+    all_dates = list(confirmed_dict.keys())
+
+    day_1 = all_dates[-1]
+    day_2 = all_dates[-2]
+    print(day_1)
+    print(day_2)
+
+    confirmed_dif = confirmed_dict[day_1] - confirmed_dict[day_2]
+    deaths_dif = deaths_dict[day_1] - deaths_dict[day_2]
+    recovered_dif = recovered_dict[day_1] - recovered_dict[day_2]
+
+    if confirmed_dif < 0 or deaths_dif < 0 or recovered_dif < 0:
+        return False
+    else:
+        return True
+
 if __name__ == "__main__":
 
     headers = {
@@ -311,18 +334,22 @@ if __name__ == "__main__":
     # fr = open(r"all.json", "r", encoding="utf8")
     data = json.load(fr)
 
-    db = pymysql.connect(
-        host = "localhost",
-        user = "root",
-        password = "123456",
-        database = "covid_2019",
-        charset = "utf8"
-    )
+    if is_problem_data(data):
+        db = pymysql.connect(
+            host = "localhost",
+            user = "root",
+            password = "123456",
+            database = "covid_2019",
+            charset = "utf8"
+        )
 
-    cursor = db.cursor()
+        cursor = db.cursor()
 
-    need_update_day_list = get_need_update_day(data, cursor)
-    # 更新全球数据
-    update_global_data(data, cursor, need_update_day_list)
-    # 更新地区数据（包括添加新增的地区信息）
-    update_region_data(data, cursor, need_update_day_list)
+        need_update_day_list = get_need_update_day(data, cursor)
+        # 更新全球数据
+        update_global_data(data, cursor, need_update_day_list)
+        # 更新地区数据（包括添加新增的地区信息）
+        update_region_data(data, cursor, need_update_day_list)
+    else:
+        print(datetime.datetime.now(), "存在脏数据")
+
