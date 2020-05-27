@@ -5,7 +5,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 import requests
 
-import resolver_data
+from . import resolver_data
+import logging
 
 # 根据全球的时间序列获取数据库中需要更新的疫情日期
 def get_need_update_day(data, cursor):
@@ -346,8 +347,9 @@ def add_US_recovered(cursor):
                 cursor.execute(sql)
 
         db.commit()
+        logging.info("US治愈数更新成功")
     except Exception:
-        print("csv不存在或网络异常")
+        logging.info("csv不存在或网络异常")
 
 if __name__ == "__main__":
 
@@ -368,6 +370,10 @@ if __name__ == "__main__":
     fr = open("/project/PlagueAbroad/EpidemicInfo/all.json", "r", encoding="utf8")
     # fr = open(r"all.json", "r", encoding="utf8")
     data = json.load(fr)
+
+    log_file = open("update.log", encoding="utf-8", mode="a")
+    logging.basicConfig(level=logging.INFO, stream=log_file,
+                        format='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 
     if is_problem_data(data):
         db = pymysql.connect(
@@ -391,6 +397,7 @@ if __name__ == "__main__":
 
         cursor.close()
         db.close()
+        logging.info("全球数据和地区数据更新成功")
     else:
-        print(datetime.datetime.now(), "存在脏数据")
+        logging.info("存在脏数据")
 
