@@ -314,6 +314,41 @@ def is_problem_data(data):
     else:
         return True
 
+# 更新美国的治愈数
+def add_US_recovered(cursor):
+    try:
+        base_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"
+        # 更新前一天的数据
+        add_delta = datetime.timedelta(-1)
+        url_day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%m-%d-%Y")
+        print(url_day_date_str, type(url_day_date_str))
+        url = base_url + url_day_date_str + '.csv'
+        us_data = pd.read_csv(url)
+        # print(us_data)
+
+        day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%Y-%m-%d")
+        state_name = list(us_data[:]["Province_State"])
+
+        for region in state_name:
+            sql = "select id from region_basic_info where region = '%s'" % region
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            if result != None:
+                region_id = result[0]
+                # print(region)
+                # print(region_id)
+                try:
+                    recovered_d = int(us_data.loc[us_data["Province_State"] == region, "Recovered"])
+                except Exception:
+                    recovered_d = 0
+                print(recovered_d)
+                sql = "update region_data set recovered = %d where region_id = %d and day_date = '%s'" % (recovered_d, region_id, day_date_str)
+                cursor.execute(sql)
+
+        db.commit()
+    except Exception:
+        print("csv不存在或网络异常")
+
 if __name__ == "__main__":
 
     headers = {
@@ -350,6 +385,12 @@ if __name__ == "__main__":
         update_global_data(data, cursor, need_update_day_list)
         # 更新地区数据（包括添加新增的地区信息）
         update_region_data(data, cursor, need_update_day_list)
+
+        # 更新美国的治愈数（因为要打开新的网页，可能存在更新不成功导致和前面的不同步的情况）
+        add_US_recovered(cursor)
+
+        cursor.close()
+        db.close()
     else:
         print(datetime.datetime.now(), "存在脏数据")
 

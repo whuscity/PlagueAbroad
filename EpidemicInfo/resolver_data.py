@@ -349,6 +349,50 @@ def get_region_data():
     # print(r_data)
     # print(region_list)
 
+# 补全美国的治愈数
+def add_US_all_recovered(cursor):
+    try:
+        base_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"
+        # 更新所有美国的治愈数据（从4月12号开始）
+        # https://raw.githubusercontent.com/CSSEGISandData/COVID-19上从4月12号开始有治愈数据
+        total_delta = (datetime.datetime.now() - datetime.datetime(2020, 4, 12)).days
+        print(total_delta)
+        for delta in range(0, total_delta):
+            add_delta = datetime.timedelta(delta)
+            url_day_date_str = (datetime.datetime.date(datetime.datetime(2020, 4, 12)) + add_delta).strftime("%m-%d-%Y")
+            print(url_day_date_str)
+
+            url = base_url + url_day_date_str + '.csv'
+            us_data = pd.read_csv(url)
+            # print(us_data)
+
+            day_date_str = (datetime.datetime.date(datetime.datetime(2020, 4, 12)) + add_delta).strftime("%Y-%m-%d")
+            # 获取美国的州名称列表
+            state_name = list(us_data[:]["Province_State"])
+
+            for region in state_name:
+                # 根据州名称转换为id
+                sql = "select id from region_basic_info where region = '%s'" % region
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                if result != None:
+                    region_id = result[0]
+                    # print(region)
+                    # print(region_id)
+                    try:
+                        recovered_d = int(us_data.loc[us_data["Province_State"] == region, "Recovered"])
+                    except Exception:
+                        # 对于NaN的数据赋值为0
+                        recovered_d = 0
+                    print(recovered_d)
+                    # 更新数据
+                    sql = "update region_data set recovered = %d where region_id = %d and day_date = '%s'" % (recovered_d, region_id, day_date_str)
+                    cursor.execute(sql)
+
+            db.commit()
+    except Exception:
+        print("csv不存在或网络异常")
+
 if __name__ == "__main__":
 
     f = open('all.json', 'r', encoding="utf-8")
@@ -374,6 +418,9 @@ if __name__ == "__main__":
 
     # 获取地区疫情数据，存入数据库
     get_region_data()
+
+    # 补全美国的治愈数
+    add_US_all_recovered(cursor)
 
     cursor.close()
     db.close()
