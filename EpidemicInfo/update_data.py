@@ -244,6 +244,9 @@ def update_region_data(data, cursor, need_update_day_list):
         # 随便赋一个值
         region_data_dict[str(region_id) + "_" + day_date] = data_id
 
+    # 获取待更新治愈数地区的id列表
+    r_region_id_list = get_recovered_region_id_list()
+
     # 更新数,更新的数据占用了id，因此需要减掉
     count = 0
     for index, row in region_data_df.iterrows():
@@ -269,9 +272,15 @@ def update_region_data(data, cursor, need_update_day_list):
         #     #                     where region_id = "%d" and day_date = "%s"
         #     #                 ''' % (confirmed, deaths, recovered, region_id, day_date)
             # 建一个id索引，增加查询速度
-            sql_insert_update = ''' update region_data set confirmed = "%d", deaths = "%d", recovered = "%d", last_updated = "%s"
-                                where id = "%d"
-                            ''' % (confirmed, deaths, recovered, last_updated, d_id)
+            if d_id in r_region_id_list:
+                # 判断是否是需要单独更新治愈数的地区，如果是，则更新全部数据的时候不更新治愈数
+                sql_insert_update = ''' update region_data set confirmed = "%d", deaths = "%d", last_updated = "%s"
+                                            where id = "%d"
+                                        ''' % (confirmed, deaths, last_updated, d_id)
+            else:
+                sql_insert_update = ''' update region_data set confirmed = "%d", deaths = "%d", recovered = "%d", last_updated = "%s"
+                                                where id = "%d"
+                                            ''' % (confirmed, deaths, recovered, last_updated, d_id)
         # print(sql_insert_update)
             cursor.execute(sql_insert_update)
             count += 1
@@ -319,37 +328,102 @@ def is_problem_data(data):
 def add_US_recovered(cursor):
     try:
         base_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"
-        # 更新前一天的数据
-        add_delta = datetime.timedelta(-1)
-        url_day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%m-%d-%Y")
-        print(url_day_date_str, type(url_day_date_str))
-        url = base_url + url_day_date_str + '.csv'
-        us_data = pd.read_csv(url)
-        # print(us_data)
+        for delta in range(2, 0, -1):
+            # 更新前两天的数据
+            add_delta = datetime.timedelta(-delta)
+            url_day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%m-%d-%Y")
+            print(url_day_date_str, type(url_day_date_str))
+            url = base_url + url_day_date_str + '.csv'
+            us_data = pd.read_csv(url)
+            # print(us_data)
 
-        day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%Y-%m-%d")
-        state_name = list(us_data[:]["Province_State"])
+            day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%Y-%m-%d")
+            state_name = list(us_data[:]["Province_State"])
 
-        for region in state_name:
-            sql = "select id from region_basic_info where region = '%s'" % region
-            cursor.execute(sql)
-            result = cursor.fetchone()
-            if result != None:
-                region_id = result[0]
-                # print(region)
-                # print(region_id)
-                try:
-                    recovered_d = int(us_data.loc[us_data["Province_State"] == region, "Recovered"])
-                except Exception:
-                    recovered_d = 0
-                print(recovered_d)
-                sql = "update region_data set recovered = %d where region_id = %d and day_date = '%s'" % (recovered_d, region_id, day_date_str)
+            for region in state_name:
+                sql = "select id from region_basic_info where region = '%s'" % region
                 cursor.execute(sql)
+                result = cursor.fetchone()
+                if result != None:
+                    region_id = result[0]
+                    # print(region)
+                    # print(region_id)
+                    try:
+                        recovered_d = int(us_data.loc[us_data["Province_State"] == region, "Recovered"])
+                    except Exception:
+                        recovered_d = 0
+                    print(recovered_d)
+                    sql = "update region_data set recovered = %d where region_id = %d and day_date = '%s'" % (recovered_d, region_id, day_date_str)
+                    cursor.execute(sql)
 
-        db.commit()
-        logging.info("US治愈数更新成功")
+            db.commit()
+            logging.info("US " + url_day_date_str + "治愈数更新成功")
     except Exception:
-        logging.info("csv不存在或网络异常")
+        logging.info("US csv不存在或网络异常")
+
+
+def add_other_country_recovered(cursor, r_country_list):
+    try:
+        # https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/05-31-2020.csv
+        base_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/"
+        # 更新前两天的数据
+        for delta in range(2, 0, -1):
+            add_delta = datetime.timedelta(-delta)
+            url_day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%m-%d-%Y")
+            print(url_day_date_str, type(url_day_date_str))
+            url = base_url + url_day_date_str + '.csv'
+            print(url)
+            country_data = pd.read_csv(url)
+            # print(us_data)
+
+            day_date_str = (datetime.datetime.date(datetime.datetime.now()) + add_delta).strftime("%Y-%m-%d")
+            for country_name in r_country_list:
+                state_name = list(country_data.loc[country_data["Country_Region"] == country_name, "Province_State"])
+
+                # print(state_name)
+
+                for region in state_name:
+                    sql = "select id from region_basic_info where region = '%s'" % region
+                    cursor.execute(sql)
+                    result = cursor.fetchone()
+                    if result != None:
+                        region_id = result[0]
+                        # print(region)
+                        # print("region_id:", region_id)
+                        try:
+                            recovered_d = int(country_data.loc[country_data["Province_State"] == region, "Recovered"])
+                        except Exception:
+                            recovered_d = 0
+                        # print(recovered_d)
+                        sql = "update region_data set recovered = %d where region_id = %d and day_date = '%s'" % (
+                        recovered_d, region_id, day_date_str)
+                        cursor.execute(sql)
+
+                db.commit()
+                logging.info(country_name + " " + url_day_date_str + "治愈数更新成功")
+    except Exception:
+        logging.info("Other Country csv不存在或网络异常")
+
+
+def get_recovered_region_id_list():
+    # 20200603更新，给定治愈数更新的国家列表
+    r_country_list = ['Spain', 'Canada', 'Germany', 'United States of America']
+    r_region_id_list = []
+    for r_country in r_country_list:
+        # 获取国家id
+        region_parent_id_sql = "select id from region_basic_info where region = '%s'" % r_country
+        cursor.execute(region_parent_id_sql)
+        r_region_country_id = cursor.fetchone()[0]
+
+        # 获取国家下面州或省的id列表
+        region_ids_sql = "select id from region_basic_info where region_parent_id = %d" % r_region_country_id
+        cursor.execute(region_ids_sql)
+        region_ids = cursor.fetchall()
+        region_ids_list = [r_id[0] for r_id in region_ids]
+
+        r_region_id_list += region_ids_list
+
+    return r_region_id_list
 
 if __name__ == "__main__":
 
@@ -394,6 +468,9 @@ if __name__ == "__main__":
 
         # 更新美国的治愈数（因为要打开新的网页，可能存在更新不成功导致和前面的不同步的情况）
         add_US_recovered(cursor)
+
+        r_country_list = ['Spain', 'Canada', 'Germany']
+        add_other_country_recovered(cursor, r_country_list)
 
         cursor.close()
         db.close()
