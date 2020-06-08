@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'article',
     'OEC',
     'plague',
+    'report',
     'crispy_forms',
     'import_export',
     'xadmin',
@@ -70,6 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 添加媒体处理器
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -129,7 +132,17 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# 配置静态资源文件夹
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static')
+]
+
+#配置媒体文件夹
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
 # 跨域
 CORS_ORIGIN_ALLOW_ALL = True
