@@ -28,7 +28,7 @@ class ArticleData(models.Model):
     publish_time = models.DateTimeField(max_length=150, verbose_name='发布时间', null=True, blank=True)
     access_time = models.DateTimeField(max_length=150, verbose_name='获取时间', null=True, blank=True)
     location = models.CharField(max_length=50, verbose_name='国家地区', null=True, blank=True)
-    type = models.CharField(choices=(('O', '官方要闻'), ('S', '海外信息')), max_length=10,
+    type = models.CharField(choices=(('O', '官方要闻'), ('S', '海外信息'), ('R', '态势报告')), max_length=10,
                               verbose_name="类型", null=True, blank=True)
 
     class Meta:
