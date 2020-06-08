@@ -238,7 +238,14 @@ def get_region_data2df(data, cursor, count, timelines):
                 if len(province_data) > 4:
                     get_region_parent_id_sql = '''select id from region_basic_info where region_chinese = "%s"''' % province_chinese
                     cursor.execute(get_region_parent_id_sql)
-                    region_parent_id = cursor.fetchone()[0]
+                    # region_parent_id = cursor.fetchone()[0]
+                    region_parent_id_c = cursor.fetchone()
+
+                    # 当出现新的国家存在省州级数据时，会出现id查不到的问题（希腊），暂时直接pass
+                    if region_parent_id_c is None:
+                        continue
+                    else:
+                        region_parent_id = region_parent_id_c[0]
 
                     # print(province_chinese)
                     for city_chinese, city_data in province_data.items():
