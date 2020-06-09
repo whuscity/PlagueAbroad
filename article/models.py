@@ -1,5 +1,6 @@
 from django.db import models
 from DjangoUeditor.models import UEditorField
+from datetime import datetime
 
 # Create your models here.
 class ArticleSource(models.Model):
@@ -25,10 +26,10 @@ class ArticleData(models.Model):
     url = models.CharField(max_length=500, verbose_name='原始链接', null=True, blank=True)
     abstract = models.TextField(max_length=300, verbose_name='摘要', null=True, blank=True)
     text = UEditorField(verbose_name='内容', width=600, height=700, toolbars="full", imagePath="ueditor/", filePath="ueditor/", blank=True, null=True)
-    publish_time = models.DateTimeField(max_length=150, verbose_name='发布时间', null=True, blank=True)
+    publish_time = models.DateTimeField(verbose_name='发布时间', null=True, blank=True, default=datetime.now())
     access_time = models.DateTimeField(max_length=150, verbose_name='获取时间', null=True, blank=True)
     location = models.CharField(max_length=50, verbose_name='国家地区', null=True, blank=True)
-    type = models.CharField(choices=(('O', '官方要闻'), ('S', '海外信息'), ('R', '态势报告')), max_length=10,
+    type = models.CharField(choices=(('O', '官方要闻'), ('S', '海外信息'), ('R', '态势报告'), ('D', '抗疫日记')), max_length=10,
                               verbose_name="类型", null=True, blank=True)
 
     class Meta:

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5263f33a-9965-46a0-81e9-2c9854732dc2" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlagueAbroad/settings.py" afterPath="$PROJECT_DIR$/PlagueAbroad/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlagueAbroad/urls.py" afterPath="$PROJECT_DIR$/PlagueAbroad/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/adminx.py" afterPath="$PROJECT_DIR$/report/adminx.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/article/models.py" afterPath="$PROJECT_DIR$/article/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -29,23 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/report/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="150">
+              <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -53,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5289">
-              <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="265" column="48" lean-forward="true" selection-start-line="265" selection-start-column="48" selection-end-line="265" selection-end-column="48" />
               <folding>
                 <marker date="1591598146550" expanded="true" signature="1030:1234" ph="insert into global... " />
                 <marker date="1591598146550" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
@@ -78,8 +64,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="447">
+              <caret line="31" column="93" lean-forward="false" selection-start-line="31" selection-start-column="93" selection-end-line="31" selection-end-column="93" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -90,7 +76,7 @@
       <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
+            <state relative-caret-position="289">
               <caret line="58" column="103" lean-forward="false" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="103" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -173,10 +159,10 @@
         <option value="$PROJECT_DIR$/xadmin/views/website.py" />
         <option value="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
         <option value="$PROJECT_DIR$/report/models.py" />
-        <option value="$PROJECT_DIR$/article/models.py" />
         <option value="$PROJECT_DIR$/report/views.py" />
         <option value="$PROJECT_DIR$/report/adminx.py" />
         <option value="$PROJECT_DIR$/PlagueAbroad/urls.py" />
+        <option value="$PROJECT_DIR$/article/models.py" />
         <option value="$PROJECT_DIR$/PlagueAbroad/settings.py" />
       </list>
     </option>
@@ -187,7 +173,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1938" />
@@ -209,14 +195,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PlagueAbroad" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlagueAbroad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlagueAbroad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlagueAbroad" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,18 +300,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15532646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.5024055" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.318236" sideWeight="0.4975945" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.4975945" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24329896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32657927" sideWeight="0.4975945" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39928487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -329,6 +319,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -599,16 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="58" column="103" lean-forward="false" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="103" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/article/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -616,14 +597,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/upload_img.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/upload_img.html" />
     <entry file="file://$PROJECT_DIR$/xadmin/plugins/filters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -638,51 +612,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="22" column="57" lean-forward="true" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-          <folding>
-            <element signature="e#636#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        <state relative-caret-position="150">
+          <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,14 +640,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5289">
-          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="265" column="48" lean-forward="true" selection-start-line="265" selection-start-column="48" selection-end-line="265" selection-end-column="48" />
           <folding>
             <marker date="1591598146550" expanded="true" signature="1030:1234" ph="insert into global... " />
             <marker date="1591598146550" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
@@ -719,6 +660,44 @@
             <marker date="1591598146550" expanded="true" signature="20841:20893" ph="select id fr... region_basic_info" />
             <marker date="1591598146550" expanded="true" signature="21485:21563" ph="update regio... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="58" column="103" lean-forward="false" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="31" column="93" lean-forward="false" selection-start-line="31" selection-start-column="93" selection-end-line="31" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
