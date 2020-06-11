@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 import xadmin
+from PlagueAbroad.settings import MEDIA_ROOT
+from django.views import static
 from django.conf.urls import url
 
 urlpatterns = [
     path('', xadmin.site.urls),
+    url(r'^media/(?P<path>.*)$',static.serve,{"document_root":MEDIA_ROOT},name='media'),
     re_path(r'^ueditor/',include('DjangoUeditor.urls' )),
 ]
