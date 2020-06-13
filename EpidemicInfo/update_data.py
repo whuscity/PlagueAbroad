@@ -319,7 +319,7 @@ def is_problem_data(data):
     deaths_dif = deaths_dict[day_1] - deaths_dict[day_2]
     recovered_dif = recovered_dict[day_1] - recovered_dict[day_2]
 
-    if confirmed_dif < 0 or deaths_dif < 0 or recovered_dif < 0:
+    if confirmed_dif < 0 or deaths_dif < 0 or recovered_dif < 0 or (confirmed_dif == 0 and deaths_dif == 0 and recovered_dif == 0):
         return False
     else:
         return True

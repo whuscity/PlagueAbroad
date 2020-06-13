@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5263f33a-9965-46a0-81e9-2c9854732dc2" name="Default Changelist" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/adminx.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/migrations/0002_auto_20200607_1530.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlagueAbroad/settings.py" afterPath="$PROJECT_DIR$/PlagueAbroad/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlagueAbroad/urls.py" afterPath="$PROJECT_DIR$/PlagueAbroad/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EpidemicInfo/update_data.py" afterPath="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,12 +17,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="250">
               <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="323" column="9" lean-forward="true" selection-start-line="323" selection-start-column="9" selection-end-line="323" selection-end-column="9" />
+              <folding>
+                <marker date="1592058561343" expanded="true" signature="443:532" ph="select id, m... global" />
+                <marker date="1592058561343" expanded="true" signature="499:531" ph="SELECT max(d... global" />
+                <marker date="1592058561343" expanded="true" signature="2400:2443" ph="select id fr... global" />
+                <marker date="1592058561343" expanded="true" signature="2590:2719" ph="insert into global... " />
+                <marker date="1592058561343" expanded="true" signature="2814:2944" ph="update globa... " />
+                <marker date="1592058561343" expanded="true" signature="3423:3455" ph="select count... region_data" />
+                <marker date="1592058561343" expanded="true" signature="4355:4393" ph="select count... region_basic_info" />
+                <marker date="1592058561343" expanded="true" signature="5780:5838" ph="select regio... region_basic_info" />
+                <marker date="1592058561343" expanded="true" signature="6229:6383" ph="insert into region_basic_info... " />
+                <marker date="1592058561343" expanded="true" signature="7572:7726" ph="insert into region_basic_info... " />
+                <marker date="1592058561343" expanded="true" signature="9516:9563" ph="select id, r... region_data" />
+                <marker date="1592058561343" expanded="true" signature="10520:10693" ph="insert into region_data... " />
+                <marker date="1592058561343" expanded="true" signature="11382:11517" ph="update regio... " />
+                <marker date="1592058561343" expanded="true" signature="11662:11819" ph="update regio... " />
+                <marker date="1592058561343" expanded="true" signature="14341:14393" ph="select id fr... region_basic_info" />
+                <marker date="1592058561343" expanded="true" signature="14909:14987" ph="update regio... " />
+                <marker date="1592058561343" expanded="true" signature="16375:16427" ph="select id fr... region_basic_info" />
+                <marker date="1592058561343" expanded="true" signature="17017:17095" ph="update regio... " />
+                <marker date="1592058561343" expanded="true" signature="17648:17700" ph="select id fr... region_basic_info" />
+                <marker date="1592058561343" expanded="true" signature="17862:17920" ph="select id fr... region_basic_info" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +61,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -77,8 +97,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="24" column="88" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
+            <state relative-caret-position="475">
+              <caret line="24" column="88" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
               <folding>
                 <element signature="e#636#668#0" expanded="true" />
               </folding>
@@ -122,18 +142,6 @@
             <state relative-caret-position="125">
               <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/adminx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -206,7 +214,6 @@
         <option value="$PROJECT_DIR$/plague/adminx.py" />
         <option value="$PROJECT_DIR$/article/adminx.py" />
         <option value="$PROJECT_DIR$/plague/models.py" />
-        <option value="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
         <option value="$PROJECT_DIR$/article/views.py" />
         <option value="$PROJECT_DIR$/templates/upload_img.html" />
         <option value="$PROJECT_DIR$/xadmin/plugins/filters.py" />
@@ -220,6 +227,7 @@
         <option value="$PROJECT_DIR$/report/__init__.py" />
         <option value="$PROJECT_DIR$/report/models.py" />
         <option value="$PROJECT_DIR$/PlagueAbroad/settings.py" />
+        <option value="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
       </list>
     </option>
   </component>
@@ -251,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -262,13 +271,12 @@
             <path>
               <item name="PlagueAbroad" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlagueAbroad" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
+              <item name="EpidemicInfo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,7 +367,7 @@
     <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10309278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104467355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.5024055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -562,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8825">
-          <caret line="361" column="25" lean-forward="false" selection-start-line="361" selection-start-column="25" selection-end-line="361" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plague/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -720,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="24" column="88" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
+        <state relative-caret-position="475">
+          <caret line="24" column="88" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
           <folding>
             <element signature="e#636#668#0" expanded="true" />
           </folding>
@@ -730,8 +731,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -740,9 +741,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="250">
           <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="323" column="9" lean-forward="true" selection-start-line="323" selection-start-column="9" selection-end-line="323" selection-end-column="9" />
+          <folding>
+            <marker date="1592058561343" expanded="true" signature="443:532" ph="select id, m... global" />
+            <marker date="1592058561343" expanded="true" signature="499:531" ph="SELECT max(d... global" />
+            <marker date="1592058561343" expanded="true" signature="2400:2443" ph="select id fr... global" />
+            <marker date="1592058561343" expanded="true" signature="2590:2719" ph="insert into global... " />
+            <marker date="1592058561343" expanded="true" signature="2814:2944" ph="update globa... " />
+            <marker date="1592058561343" expanded="true" signature="3423:3455" ph="select count... region_data" />
+            <marker date="1592058561343" expanded="true" signature="4355:4393" ph="select count... region_basic_info" />
+            <marker date="1592058561343" expanded="true" signature="5780:5838" ph="select regio... region_basic_info" />
+            <marker date="1592058561343" expanded="true" signature="6229:6383" ph="insert into region_basic_info... " />
+            <marker date="1592058561343" expanded="true" signature="7572:7726" ph="insert into region_basic_info... " />
+            <marker date="1592058561343" expanded="true" signature="9516:9563" ph="select id, r... region_data" />
+            <marker date="1592058561343" expanded="true" signature="10520:10693" ph="insert into region_data... " />
+            <marker date="1592058561343" expanded="true" signature="11382:11517" ph="update regio... " />
+            <marker date="1592058561343" expanded="true" signature="11662:11819" ph="update regio... " />
+            <marker date="1592058561343" expanded="true" signature="14341:14393" ph="select id fr... region_basic_info" />
+            <marker date="1592058561343" expanded="true" signature="14909:14987" ph="update regio... " />
+            <marker date="1592058561343" expanded="true" signature="16375:16427" ph="select id fr... region_basic_info" />
+            <marker date="1592058561343" expanded="true" signature="17017:17095" ph="update regio... " />
+            <marker date="1592058561343" expanded="true" signature="17648:17700" ph="select id fr... region_basic_info" />
+            <marker date="1592058561343" expanded="true" signature="17862:17920" ph="select id fr... region_basic_info" />
+          </folding>
         </state>
       </provider>
     </entry>
