@@ -55,6 +55,12 @@ def get_need_update_day(data, cursor):
             need_update_day_list.append(need_update_day_str)
     print(need_update_day_list)
 
+    # 获取今天的日期，不更新当天的数据
+    today_date = datetime.datetime.now().date()
+    today_date_str = today_date.strftime("%Y-%m-%d")
+    print(today_date_str)
+    need_update_day_list.remove(today_date_str)
+
     return need_update_day_list
 
 # 全球数据更新
@@ -302,7 +308,8 @@ def update_region_data(data, cursor, need_update_day_list):
     resolver_data.build_region_dict(cursor)
 
 # 通过最新的两条数据判断是否存在问题
-def is_problem_data(data):
+# 20200628更新
+def is_problem_data(data, need_update_day_list):
     global_data = data["全球"]
     confirmed_dict = global_data["confirmedCount"]
     deaths_dict = global_data["deadCount"]
@@ -310,8 +317,13 @@ def is_problem_data(data):
 
     all_dates = list(confirmed_dict.keys())
 
-    day_1 = all_dates[-1]
-    day_2 = all_dates[-2]
+    # day_1 = all_dates[-1]
+    # day_2 = all_dates[-2]
+    # print(day_1)
+    # print(day_2)
+
+    day_1 = need_update_day_list[-1]
+    day_2 = need_update_day_list[-2]
     print(day_1)
     print(day_2)
 
@@ -449,18 +461,20 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=log_file,
                         format='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 
-    if is_problem_data(data):
-        db = pymysql.connect(
-            host = "localhost",
-            user = "root",
-            password = "123456",
-            database = "covid_2019",
-            charset = "utf8"
-        )
+    db = pymysql.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="covid_2019",
+        charset="utf8"
+    )
 
-        cursor = db.cursor()
+    cursor = db.cursor()
 
-        need_update_day_list = get_need_update_day(data, cursor)
+    need_update_day_list = get_need_update_day(data, cursor)
+
+    if is_problem_data(data, need_update_day_list):
+
         # 更新全球数据
         update_global_data(data, cursor, need_update_day_list)
         # 更新地区数据（包括添加新增的地区信息）

@@ -44,12 +44,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'import_export',
     'xadmin',
+    'corsheaders',
     'DjangoUeditor'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
