@@ -59,7 +59,8 @@ def get_need_update_day(data, cursor):
     today_date = datetime.datetime.now().date()
     today_date_str = today_date.strftime("%Y-%m-%d")
     print(today_date_str)
-    need_update_day_list.remove(today_date_str)
+    if today_date_str in need_update_day_list:
+        need_update_day_list.remove(today_date_str)
 
     return need_update_day_list
 
@@ -316,6 +317,14 @@ def is_problem_data(data, need_update_day_list):
     recovered_dict = global_data["curedCount"]
 
     all_dates = list(confirmed_dict.keys())
+
+    # 获取今天的日期，不更新当天的数据
+    today_date = datetime.datetime.now().date()
+    today_date_str = today_date.strftime("%Y-%m-%d")
+
+    if today_date_str in all_dates:
+        logging.info("不更新当天数据")
+        return False
 
     # day_1 = all_dates[-1]
     # day_2 = all_dates[-2]
