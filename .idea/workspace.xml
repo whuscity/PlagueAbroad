@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5263f33a-9965-46a0-81e9-2c9854732dc2" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EpidemicInfo/update_data.py" afterPath="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +19,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="1150">
               <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
               <folding />
             </state>
@@ -30,29 +29,29 @@
       <file leaf-file-name="update_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+            <state relative-caret-position="473">
+              <caret line="485" column="27" lean-forward="false" selection-start-line="485" selection-start-column="27" selection-end-line="485" selection-end-column="27" />
               <folding>
-                <marker date="1593441368552" expanded="true" signature="443:532" ph="select id, m... global" />
-                <marker date="1593441368552" expanded="true" signature="499:531" ph="SELECT max(d... global" />
-                <marker date="1593441368552" expanded="true" signature="2650:2693" ph="select id fr... global" />
-                <marker date="1593441368552" expanded="true" signature="2840:2969" ph="insert into global... " />
-                <marker date="1593441368552" expanded="true" signature="3064:3194" ph="update globa... " />
-                <marker date="1593441368552" expanded="true" signature="3673:3705" ph="select count... region_data" />
-                <marker date="1593441368552" expanded="true" signature="4605:4643" ph="select count... region_basic_info" />
-                <marker date="1593441368552" expanded="true" signature="6030:6088" ph="select regio... region_basic_info" />
-                <marker date="1593441368552" expanded="true" signature="6479:6633" ph="insert into region_basic_info... " />
-                <marker date="1593441368552" expanded="true" signature="7822:7976" ph="insert into region_basic_info... " />
-                <marker date="1593441368552" expanded="true" signature="9766:9813" ph="select id, r... region_data" />
-                <marker date="1593441368552" expanded="true" signature="10770:10943" ph="insert into region_data... " />
-                <marker date="1593441368552" expanded="true" signature="11632:11767" ph="update regio... " />
-                <marker date="1593441368552" expanded="true" signature="11912:12069" ph="update regio... " />
-                <marker date="1593441368552" expanded="true" signature="14958:15010" ph="select id fr... region_basic_info" />
-                <marker date="1593441368552" expanded="true" signature="15526:15604" ph="update regio... " />
-                <marker date="1593441368552" expanded="true" signature="16992:17044" ph="select id fr... region_basic_info" />
-                <marker date="1593441368552" expanded="true" signature="17634:17712" ph="update regio... " />
-                <marker date="1593441368552" expanded="true" signature="18265:18317" ph="select id fr... region_basic_info" />
-                <marker date="1593441368552" expanded="true" signature="18479:18537" ph="select id fr... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="443:532" ph="select id, m... global" />
+                <marker date="1593483022382" expanded="true" signature="499:531" ph="SELECT max(d... global" />
+                <marker date="1593483022382" expanded="true" signature="2650:2693" ph="select id fr... global" />
+                <marker date="1593483022382" expanded="true" signature="2840:2969" ph="insert into global... " />
+                <marker date="1593483022382" expanded="true" signature="3064:3194" ph="update globa... " />
+                <marker date="1593483022382" expanded="true" signature="3673:3705" ph="select count... region_data" />
+                <marker date="1593483022382" expanded="true" signature="4605:4643" ph="select count... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="6030:6088" ph="select regio... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="6479:6633" ph="insert into region_basic_info... " />
+                <marker date="1593483022382" expanded="true" signature="7822:7976" ph="insert into region_basic_info... " />
+                <marker date="1593483022382" expanded="true" signature="9766:9813" ph="select id, r... region_data" />
+                <marker date="1593483022382" expanded="true" signature="10770:10943" ph="insert into region_data... " />
+                <marker date="1593483022382" expanded="true" signature="11632:11767" ph="update regio... " />
+                <marker date="1593483022382" expanded="true" signature="11912:12069" ph="update regio... " />
+                <marker date="1593483022382" expanded="true" signature="15038:15090" ph="select id fr... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="15606:15684" ph="update regio... " />
+                <marker date="1593483022382" expanded="true" signature="17072:17124" ph="select id fr... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="17714:17792" ph="update regio... " />
+                <marker date="1593483022382" expanded="true" signature="18345:18397" ph="select id fr... region_basic_info" />
+                <marker date="1593483022382" expanded="true" signature="18559:18617" ph="select id fr... region_basic_info" />
               </folding>
             </state>
           </provider>
@@ -249,6 +248,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,7 +280,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,7 +369,7 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11134021" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112714775" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.5024055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -738,7 +737,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="1150">
           <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
           <folding />
         </state>
@@ -746,29 +745,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+        <state relative-caret-position="473">
+          <caret line="485" column="27" lean-forward="false" selection-start-line="485" selection-start-column="27" selection-end-line="485" selection-end-column="27" />
           <folding>
-            <marker date="1593441368552" expanded="true" signature="443:532" ph="select id, m... global" />
-            <marker date="1593441368552" expanded="true" signature="499:531" ph="SELECT max(d... global" />
-            <marker date="1593441368552" expanded="true" signature="2650:2693" ph="select id fr... global" />
-            <marker date="1593441368552" expanded="true" signature="2840:2969" ph="insert into global... " />
-            <marker date="1593441368552" expanded="true" signature="3064:3194" ph="update globa... " />
-            <marker date="1593441368552" expanded="true" signature="3673:3705" ph="select count... region_data" />
-            <marker date="1593441368552" expanded="true" signature="4605:4643" ph="select count... region_basic_info" />
-            <marker date="1593441368552" expanded="true" signature="6030:6088" ph="select regio... region_basic_info" />
-            <marker date="1593441368552" expanded="true" signature="6479:6633" ph="insert into region_basic_info... " />
-            <marker date="1593441368552" expanded="true" signature="7822:7976" ph="insert into region_basic_info... " />
-            <marker date="1593441368552" expanded="true" signature="9766:9813" ph="select id, r... region_data" />
-            <marker date="1593441368552" expanded="true" signature="10770:10943" ph="insert into region_data... " />
-            <marker date="1593441368552" expanded="true" signature="11632:11767" ph="update regio... " />
-            <marker date="1593441368552" expanded="true" signature="11912:12069" ph="update regio... " />
-            <marker date="1593441368552" expanded="true" signature="14958:15010" ph="select id fr... region_basic_info" />
-            <marker date="1593441368552" expanded="true" signature="15526:15604" ph="update regio... " />
-            <marker date="1593441368552" expanded="true" signature="16992:17044" ph="select id fr... region_basic_info" />
-            <marker date="1593441368552" expanded="true" signature="17634:17712" ph="update regio... " />
-            <marker date="1593441368552" expanded="true" signature="18265:18317" ph="select id fr... region_basic_info" />
-            <marker date="1593441368552" expanded="true" signature="18479:18537" ph="select id fr... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="443:532" ph="select id, m... global" />
+            <marker date="1593483022382" expanded="true" signature="499:531" ph="SELECT max(d... global" />
+            <marker date="1593483022382" expanded="true" signature="2650:2693" ph="select id fr... global" />
+            <marker date="1593483022382" expanded="true" signature="2840:2969" ph="insert into global... " />
+            <marker date="1593483022382" expanded="true" signature="3064:3194" ph="update globa... " />
+            <marker date="1593483022382" expanded="true" signature="3673:3705" ph="select count... region_data" />
+            <marker date="1593483022382" expanded="true" signature="4605:4643" ph="select count... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="6030:6088" ph="select regio... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="6479:6633" ph="insert into region_basic_info... " />
+            <marker date="1593483022382" expanded="true" signature="7822:7976" ph="insert into region_basic_info... " />
+            <marker date="1593483022382" expanded="true" signature="9766:9813" ph="select id, r... region_data" />
+            <marker date="1593483022382" expanded="true" signature="10770:10943" ph="insert into region_data... " />
+            <marker date="1593483022382" expanded="true" signature="11632:11767" ph="update regio... " />
+            <marker date="1593483022382" expanded="true" signature="11912:12069" ph="update regio... " />
+            <marker date="1593483022382" expanded="true" signature="15038:15090" ph="select id fr... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="15606:15684" ph="update regio... " />
+            <marker date="1593483022382" expanded="true" signature="17072:17124" ph="select id fr... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="17714:17792" ph="update regio... " />
+            <marker date="1593483022382" expanded="true" signature="18345:18397" ph="select id fr... region_basic_info" />
+            <marker date="1593483022382" expanded="true" signature="18559:18617" ph="select id fr... region_basic_info" />
           </folding>
         </state>
       </provider>

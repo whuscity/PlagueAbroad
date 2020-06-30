@@ -310,7 +310,7 @@ def update_region_data(data, cursor, need_update_day_list):
 
 # 通过最新的两条数据判断是否存在问题
 # 20200628更新
-def is_problem_data(data, need_update_day_list):
+def is_problem_data(data):
     global_data = data["全球"]
     confirmed_dict = global_data["confirmedCount"]
     deaths_dict = global_data["deadCount"]
@@ -323,18 +323,19 @@ def is_problem_data(data, need_update_day_list):
     today_date_str = today_date.strftime("%Y-%m-%d")
 
     if today_date_str in all_dates:
-        logging.info("不更新当天数据")
-        return False
-
-    # day_1 = all_dates[-1]
-    # day_2 = all_dates[-2]
-    # print(day_1)
-    # print(day_2)
-
-    day_1 = need_update_day_list[-1]
-    day_2 = need_update_day_list[-2]
-    print(day_1)
-    print(day_2)
+        logging.info("存在当天数据，但不更新")
+        # return False
+        day_1 = all_dates[-2]
+        day_2 = all_dates[-3]
+        print(day_1)
+        print(day_2)
+    else:
+        # day_1 = need_update_day_list[-1]
+        # day_2 = need_update_day_list[-2]
+        day_1 = all_dates[-1]
+        day_2 = all_dates[-2]
+        print(day_1)
+        print(day_2)
 
     confirmed_dif = confirmed_dict[day_1] - confirmed_dict[day_2]
     deaths_dif = deaths_dict[day_1] - deaths_dict[day_2]
@@ -482,7 +483,7 @@ if __name__ == "__main__":
 
     need_update_day_list = get_need_update_day(data, cursor)
 
-    if is_problem_data(data, need_update_day_list):
+    if is_problem_data(data):
 
         # 更新全球数据
         update_global_data(data, cursor, need_update_day_list)
