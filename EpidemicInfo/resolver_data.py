@@ -34,7 +34,7 @@ def get_global(data, cursor):
     db.commit()
 
 # 将地区疫情数据存入DataFrame，便于转为csv以及写入数据库
-def get_region_data2df(data, cursor, count, timelines):
+def get_region_data2df(data, db, cursor, count, timelines):
     '''
     data：json格式的所有的数据
     cursor：数据库cursor
@@ -201,7 +201,24 @@ def get_region_data2df(data, cursor, count, timelines):
                 # 获取父级(国家级)的id
                 get_region_parent_id_sql = '''select id from region_basic_info where region_chinese = "%s"''' % country_chinese
                 cursor.execute(get_region_parent_id_sql)
-                region_parent_id = cursor.fetchone()[0]
+
+                # 当出现新的国家并且包含省份数据时，此时这个国家还没有添加到region_basic_info表中，导致出错 20200807
+                parent_id_result = cursor.fetchone()
+                if parent_id_result != None:
+                    region_parent_id = parent_id_result[0]
+                else:
+                    # 若该国家数据不存在，则直接插入region_basic_info先
+                    select_sql = "select count(*) from region_basic_info"
+                    cursor.execute(select_sql)
+                    total = cursor.fetchone()[0]
+                    insert_region_id = total + 1
+                    insert_country_sql = '''insert into region_basic_info(id, region, region_chinese, region_parent_id, region_level) 
+                                        values("%d", "%s", "%s", "%d", "%d")''' % (
+                    insert_region_id, country_data['ENGLISH'], country_chinese, 0, 1)
+                    cursor.execute(insert_country_sql)
+                    db.commit()
+                    region_parent_id = insert_region_id
+                    
                 confirmed_dict = province_data["confirmedCount"]
                 deaths_dict = province_data["deadCount"]
                 recovered_dict = province_data["curedCount"]

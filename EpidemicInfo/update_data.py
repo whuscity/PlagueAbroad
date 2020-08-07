@@ -94,7 +94,7 @@ def update_global_data(data, cursor, need_update_day_list):
     db.commit()
 
 # 更新地区数据（包括添加新增的地区信息,新增的地区信息仅包含need_update_day_list列表中包含的日期数据）
-def update_region_data(data, cursor, need_update_day_list):
+def update_region_data(data, db, cursor, need_update_day_list):
     '''
     data：json格式的所有的数据
     cursor：数据库cursor
@@ -111,7 +111,10 @@ def update_region_data(data, cursor, need_update_day_list):
     db_index = cursor.fetchone()[0] + 1
     
     # 获取新增的region_data的DataFrame格式的数据
-    region_data_df = resolver_data.get_region_data2df(data, cursor, db_index, need_update_day_list)
+    region_data_df = resolver_data.get_region_data2df(data, db, cursor, db_index, need_update_day_list)
+
+    # 当有新的国家数据插入时，需要重新生成 20200807
+    resolver_data.build_region_dict(cursor)
 
     # print(region_data_df)
     # 将DataFrame格式的数据的region列存入list，格式为["阿富汗_Afghanistan", "拉潘帕省_La Pampa_7"]
@@ -488,7 +491,7 @@ if __name__ == "__main__":
         # 更新全球数据
         update_global_data(data, cursor, need_update_day_list)
         # 更新地区数据（包括添加新增的地区信息）
-        update_region_data(data, cursor, need_update_day_list)
+        update_region_data(data, db, cursor, need_update_day_list)
 
         # 更新美国的治愈数（因为要打开新的网页，可能存在更新不成功导致和前面的不同步的情况）
         add_US_recovered(cursor)
