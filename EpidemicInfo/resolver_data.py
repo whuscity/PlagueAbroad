@@ -218,7 +218,7 @@ def get_region_data2df(data, db, cursor, count, timelines):
                     cursor.execute(insert_country_sql)
                     db.commit()
                     region_parent_id = insert_region_id
-                    
+
                 confirmed_dict = province_data["confirmedCount"]
                 deaths_dict = province_data["deadCount"]
                 recovered_dict = province_data["curedCount"]

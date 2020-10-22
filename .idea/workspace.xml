@@ -4,7 +4,7 @@
     <list default="true" id="5263f33a-9965-46a0-81e9-2c9854732dc2" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" afterPath="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EpidemicInfo/update_data.py" afterPath="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/article/adminx.py" afterPath="$PROJECT_DIR$/article/adminx.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +21,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
+            <state relative-caret-position="25">
               <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
               <folding />
             </state>
@@ -31,7 +31,7 @@
       <file leaf-file-name="update_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="2625">
               <caret line="113" column="45" lean-forward="false" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
               <folding>
                 <marker date="1596790526958" expanded="true" signature="443:532" ph="select id, m... global" />
@@ -59,26 +59,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1863">
-              <caret line="220" column="20" lean-forward="false" selection-start-line="220" selection-start-column="20" selection-end-line="220" selection-end-column="20" />
+            <state relative-caret-position="3550">
+              <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
               <folding>
-                <marker date="1596790597337" expanded="true" signature="1030:1234" ph="insert into global... " />
-                <marker date="1596790597337" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
-                <marker date="1596790597337" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
-                <marker date="1596790597337" expanded="true" signature="13104:13164" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="17038:17112" ph="select id, r... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="19651:19703" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="20285:20363" ph="update regio... " />
-                <marker date="1596790597337" expanded="true" signature="21794:21846" ph="select id fr... region_basic_info" />
-                <marker date="1596790597337" expanded="true" signature="22438:22516" ph="update regio... " />
+                <marker date="1596790730769" expanded="true" signature="1030:1234" ph="insert into global... " />
+                <marker date="1596790730769" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
+                <marker date="1596790730769" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
+                <marker date="1596790730769" expanded="true" signature="13084:13144" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="17018:17092" ph="select id, r... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="19631:19683" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="20265:20343" ph="update regio... " />
+                <marker date="1596790730769" expanded="true" signature="21774:21826" ph="select id fr... region_basic_info" />
+                <marker date="1596790730769" expanded="true" signature="22418:22496" ph="update regio... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/article/adminx.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="565">
+              <caret line="113" column="29" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="113" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,7 +108,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
+            <state relative-caret-position="640">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -149,16 +159,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -193,6 +193,8 @@
       <find>post</find>
       <find>UpdateAdminView</find>
       <find>article</find>
+      <find>import-export</find>
+      <find>excel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,7 +227,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/xadmin/views/edit.py" />
         <option value="$PROJECT_DIR$/plague/adminx.py" />
-        <option value="$PROJECT_DIR$/article/adminx.py" />
         <option value="$PROJECT_DIR$/plague/models.py" />
         <option value="$PROJECT_DIR$/article/views.py" />
         <option value="$PROJECT_DIR$/templates/upload_img.html" />
@@ -242,6 +243,7 @@
         <option value="$PROJECT_DIR$/report/models.py" />
         <option value="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
         <option value="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
+        <option value="$PROJECT_DIR$/article/adminx.py" />
       </list>
     </option>
   </component>
@@ -381,7 +383,7 @@
     <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16426116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17044674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.5024055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -389,7 +391,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.318236" sideWeight="0.4975945" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32657927" sideWeight="0.4975945" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32619047" sideWeight="0.4975945" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39928487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -657,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -675,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,37 +714,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EpidemicInfo/update_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="2625">
           <caret line="113" column="45" lean-forward="false" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
           <folding>
             <marker date="1596790526958" expanded="true" signature="443:532" ph="select id, m... global" />
@@ -779,23 +745,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1863">
-          <caret line="220" column="20" lean-forward="false" selection-start-line="220" selection-start-column="20" selection-end-line="220" selection-end-column="20" />
+        <state relative-caret-position="3550">
+          <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
           <folding>
-            <marker date="1596790597337" expanded="true" signature="1030:1234" ph="insert into global... " />
-            <marker date="1596790597337" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
-            <marker date="1596790597337" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
-            <marker date="1596790597337" expanded="true" signature="13104:13164" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="17038:17112" ph="select id, r... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="19651:19703" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="20285:20363" ph="update regio... " />
-            <marker date="1596790597337" expanded="true" signature="21794:21846" ph="select id fr... region_basic_info" />
-            <marker date="1596790597337" expanded="true" signature="22438:22516" ph="update regio... " />
+            <marker date="1596790730769" expanded="true" signature="1030:1234" ph="insert into global... " />
+            <marker date="1596790730769" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
+            <marker date="1596790730769" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
+            <marker date="1596790730769" expanded="true" signature="13084:13144" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="17018:17092" ph="select id, r... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="19631:19683" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="20265:20343" ph="update regio... " />
+            <marker date="1596790730769" expanded="true" signature="21774:21826" ph="select id fr... region_basic_info" />
+            <marker date="1596790730769" expanded="true" signature="22418:22496" ph="update regio... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/adminx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="113" column="29" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="113" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

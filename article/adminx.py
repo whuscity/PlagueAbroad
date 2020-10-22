@@ -99,12 +99,22 @@ class ArticleDataAdmin(object):
                 case.access_time = datetime.strftime(access_time, "%Y-%m-%d %H:%M:%S")
                 # case.access_time = item.get('access_time')
                 case.location = item.get('location')
-                type2char = {'官方通告': 'O', '抗疫指南':'D', '风险预警':'A'}
-                case.type = type2char.get(item.get('type'))
-
+                # type2char = {'官方通告': 'O', '抗疫指南':'D', '风险预警':'A'}
+                # case.type = type2char.get(item.get('type'))
+                source_key_list = ["使馆", "领馆", "领事馆"]
+                title_key_list = ["使馆", "领馆", "领事馆", "诈骗", "健康包", "问卷", "登记", "统计"]
+                case.type = 'S'
+                for source_key in source_key_list:
+                    if source_key in case.original_source_name:
+                        case.type = 'O'
+                        break
+                for title_key in title_key_list:
+                    if title_key in case.title:
+                        case.type = 'O'
+                        break
                 # public_dict = {'否': 0, '是': 1, '待审核': 2}
                 # case.is_public = public_dict.get(item.get('is_public'))
-                case.is_public = 2
+                case.is_public = 1
                 # top_dict = {'否': 0, '是': 1}
                 # case.is_put_top = top_dict.get(item.get('is_put_top'))
                 case.is_put_top = 0
