@@ -4,7 +4,6 @@
     <list default="true" id="5263f33a-9965-46a0-81e9-2c9854732dc2" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" afterPath="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/article/adminx.py" afterPath="$PROJECT_DIR$/article/adminx.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +20,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="1150">
               <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
               <folding />
             </state>
@@ -59,35 +58,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="resolver_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3550">
-              <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+            <state relative-caret-position="365">
+              <caret line="243" column="55" lean-forward="true" selection-start-line="243" selection-start-column="55" selection-end-line="243" selection-end-column="55" />
               <folding>
-                <marker date="1596790730769" expanded="true" signature="1030:1234" ph="insert into global... " />
-                <marker date="1596790730769" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
-                <marker date="1596790730769" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
-                <marker date="1596790730769" expanded="true" signature="13084:13144" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="17018:17092" ph="select id, r... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="19631:19683" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="20265:20343" ph="update regio... " />
-                <marker date="1596790730769" expanded="true" signature="21774:21826" ph="select id fr... region_basic_info" />
-                <marker date="1596790730769" expanded="true" signature="22418:22496" ph="update regio... " />
+                <marker date="1604287837849" expanded="true" signature="1030:1234" ph="insert into global... " />
+                <marker date="1604287837849" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
+                <marker date="1604287837849" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
+                <marker date="1604287837849" expanded="true" signature="13175:13235" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="17109:17183" ph="select id, r... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="19722:19774" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="20356:20434" ph="update regio... " />
+                <marker date="1604287837849" expanded="true" signature="21865:21917" ph="select id fr... region_basic_info" />
+                <marker date="1604287837849" expanded="true" signature="22509:22587" ph="update regio... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="113" column="29" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="113" selection-end-column="29" />
+            <state relative-caret-position="290">
+              <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -108,7 +107,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
+            <state relative-caret-position="800">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -242,8 +241,8 @@
         <option value="$PROJECT_DIR$/PlagueAbroad/settings.py" />
         <option value="$PROJECT_DIR$/report/models.py" />
         <option value="$PROJECT_DIR$/EpidemicInfo/update_data.py" />
-        <option value="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
         <option value="$PROJECT_DIR$/article/adminx.py" />
+        <option value="$PROJECT_DIR$/EpidemicInfo/resolver_data.py" />
       </list>
     </option>
   </component>
@@ -253,7 +252,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1938" />
@@ -275,8 +274,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,10 +379,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17044674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1725086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.5024055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -743,28 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3550">
-          <caret line="146" column="36" lean-forward="false" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
-          <folding>
-            <marker date="1596790730769" expanded="true" signature="1030:1234" ph="insert into global... " />
-            <marker date="1596790730769" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
-            <marker date="1596790730769" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
-            <marker date="1596790730769" expanded="true" signature="13084:13144" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="17018:17092" ph="select id, r... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="19631:19683" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="20265:20343" ph="update regio... " />
-            <marker date="1596790730769" expanded="true" signature="21774:21826" ph="select id fr... region_basic_info" />
-            <marker date="1596790730769" expanded="true" signature="22418:22496" ph="update regio... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -777,7 +753,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlagueAbroad/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="1150">
           <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="16" />
           <folding />
         </state>
@@ -785,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/article/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
+        <state relative-caret-position="800">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -795,9 +771,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/article/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="113" column="29" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="113" selection-end-column="29" />
+        <state relative-caret-position="290">
+          <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EpidemicInfo/resolver_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="243" column="55" lean-forward="true" selection-start-line="243" selection-start-column="55" selection-end-line="243" selection-end-column="55" />
+          <folding>
+            <marker date="1604287837849" expanded="true" signature="1030:1234" ph="insert into global... " />
+            <marker date="1604287837849" expanded="true" signature="1118:1153" ph="select &quot;miss... " />
+            <marker date="1604287837849" expanded="true" signature="4245:4305" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="6590:6650" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="10175:10235" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="10665:10703" ph="select count... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="10894:11061" ph="insert into region_basic_info... " />
+            <marker date="1604287837849" expanded="true" signature="13175:13235" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="17109:17183" ph="select id, r... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="19722:19774" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="20356:20434" ph="update regio... " />
+            <marker date="1604287837849" expanded="true" signature="21865:21917" ph="select id fr... region_basic_info" />
+            <marker date="1604287837849" expanded="true" signature="22509:22587" ph="update regio... " />
+          </folding>
         </state>
       </provider>
     </entry>

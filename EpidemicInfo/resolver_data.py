@@ -240,7 +240,9 @@ def get_region_data2df(data, db, cursor, count, timelines):
                         recovered = recovered_dict[day_date]
                     print(count)
                     last_updated = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    id_list.append(count)
+                    print(province_chinese)
+                    if province_chinese == 'undefined':
+                        continue
                     region = province_chinese + "_" + province_data['ENGLISH'] + "_" + str(region_parent_id)
                     region_list.append(region)
                     # region_list.append(country_chinese)
