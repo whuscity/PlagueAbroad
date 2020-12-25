@@ -24,4 +24,7 @@ urlpatterns = [
     path('', xadmin.site.urls),
     url(r'^media/(?P<path>.*)$',static.serve,{"document_root":MEDIA_ROOT},name='media'),
     re_path(r'^ueditor/',include('DjangoUeditor.urls' )),
+
+    # url分发
+    url(r'^plague/', include(('plague.urls', 'plague'), namespace='plague')),
 ]

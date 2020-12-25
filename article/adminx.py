@@ -23,6 +23,7 @@ class CommonXadminSettings(object):
     site_footer = '鄂ICP备15018236号-5'
     menu_style = 'accordion'
 
+
 class ArticleSourceAdmin(object):
     list_display = ['name', 'link', 'description']
     list_filter = ['name']

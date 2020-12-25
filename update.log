@@ -1,0 +1,9 @@
+2020-12-25 13:33:13,703 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:387] - INFO: US csv不存在或网络异常
+2020-12-25 13:33:13,767 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:430] - INFO: Other Country csv不存在或网络异常
+2020-12-25 13:33:13,769 - D:\Github\PlagueAbroad\plague\views.py[line:64] - INFO: 全球数据和地区数据更新成功----导入
+2020-12-25 13:35:36,986 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:387] - INFO: US csv不存在或网络异常
+2020-12-25 13:35:37,019 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:430] - INFO: Other Country csv不存在或网络异常
+2020-12-25 13:35:37,020 - D:\Github\PlagueAbroad\plague\views.py[line:64] - INFO: 全球数据和地区数据更新成功----导入
+2020-12-25 13:37:56,759 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:387] - INFO: US csv不存在或网络异常
+2020-12-25 13:37:56,799 - D:\Github\PlagueAbroad\PlagueDataImport\update_data.py[line:430] - INFO: Other Country csv不存在或网络异常
+2020-12-25 13:37:56,800 - D:\Github\PlagueAbroad\plague\views.py[line:64] - INFO: 全球数据和地区数据更新成功----导入
