@@ -2,7 +2,7 @@ asgiref==3.2.3
 certifi==2019.11.28
 chardet==3.0.4
 diff-match-patch==20181111
-Django==2.2.10
+Django==2.2.20
 django-cors-headers==3.2.1
 django-crispy-forms==1.7.2
 django-formtools==2.1
