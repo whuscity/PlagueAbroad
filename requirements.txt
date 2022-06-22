@@ -14,7 +14,7 @@ httplib2==0.18.0
 idna==2.9
 MarkupSafe==1.1.1
 mysqlclient==1.4.6
-numpy==1.18.3
+numpy==1.22.0
 pandas==1.0.3
 Pillow==7.0.0
 PyMySQL==0.9.3
